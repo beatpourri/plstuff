@@ -46,9 +46,9 @@
       mode: {
         symbol: {
           // symbol mode to build the SVG
-          dest: 'dist/img/sprite', // destination folder
+          dest: 'dist/img/sprite', // destination foldeer
           sprite: 'sprite.svg', // sprite name
-          example: true, // Build sample page
+          example: false, // Don't build sample page
         },
       },
       svg: {
@@ -92,7 +92,7 @@
       // WebPageTest API key https://www.webpagetest.org/getkey.php
       // key:
     },
-/*    pa11y: {
+    pa11y: {
       includeNotices: true,
       includeWarnings: true,
       ignore: [
@@ -107,7 +107,7 @@
       standard: 'WCAG2AA',
       wait: 250,
       actions: [],
-    },*/
+    },
   };
 })();
 /* Custom tasks */
