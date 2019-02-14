@@ -4,14 +4,21 @@
   "version": "1.0.0",
   "devDependencies": {
     "emulsify-gulp": "^4.0.0",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "lodash.assign": "4.2.0",
+    "lodash.includes": "4.1.3",
+    "lodash.merge": "4.6.0",
+    "yeoman-generator": "0.23.3",
+    "yo": "1.8.5"
   },
   "scripts": {
     "add-local-config": "./scripts/local_config.sh",
     "add-custom-gulp-tasks": "./scripts/add_custom_gulp_tasks.sh",
+    "add-new-component": "./scripts/add_new_component.sh",
     "customize": "./scripts/customize.sh",
     "svg": "gulp icons && gulp listallicons",
     "watch-custom-tasks": "gulp customtasks",
+    "new": "yo ./tools/generate-new-component/index.js",
     "start": "gulp compile && gulp theme",
     "postinstall": "./scripts/pattern_lab.sh && ./scripts/twig_functions.sh"
   },
