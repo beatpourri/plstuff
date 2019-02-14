@@ -4,8 +4,7 @@
   "version": "1.0.0",
   "devDependencies": {
     "emulsify-gulp": "^4.0.0",
-    "gulp": "^3.9.1",
-    "gulp-template": "^5.0.0"
+    "gulp": "^3.9.1"
   },
   "scripts": {
     "add-local-config": "./scripts/local_config.sh",
