@@ -53,9 +53,3 @@ gulp.task('customtasks', function() {
     // Watch .svg icon files
     gulp.watch('images/icons/src/**/*.svg', ['listallicons', 'icons']);
 });
-
-
-
-
-
-
