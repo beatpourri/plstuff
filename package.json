@@ -12,6 +12,7 @@
     "yo": "1.8.5"
   },
   "scripts": {
+    "add-scripts": "./scripts/add_scripts.sh",
     "add-local-config": "./scripts/local_config.sh",
     "add-custom-gulp-tasks": "./scripts/add_custom_gulp_tasks.sh",
     "add-new-component": "./scripts/add_new_component.sh",
