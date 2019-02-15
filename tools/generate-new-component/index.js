@@ -9,24 +9,26 @@ var plBase = ('./components/_patterns');
 
 module.exports = yeoman.Base.extend({
   prompting: function () {
-
-    console.log('');
-    console.log(chalk.bold.blue('Let\'s build a component!'));
-    console.log(chalk.yellow('Templates are here: ' + path.relative(process.cwd(), __dirname)));
-    console.log('');
-
+    console.log(chalk.bold.blue('Add a new component'));
     var prompts = [{
       type: 'list',
       name: 'patternType',
-      message: 'Where would you save the new component?',
-      choices: fs.readdirSync(plBase, 'utf8')
+      message: 'Where do you want to add the new component?',
+      // Filter files in folders
+      choices: fs.readdirSync(plBase, 'utf8').filter(function(listfolders) {
+        return listfolders !== '.DS_Store' && listfolders !== 'style.scss';
+      })
+
     }, {
       type: 'list',
       name: 'patternSubType',
       message: 'Where in here?',
       choices: function(answers) {
         var folder = path.join(plBase, answers.patternType);
-        var subfolders = fs.readdirSync(folder, 'utf8');
+        // Filter files in subfolders
+        var subfolders = fs.readdirSync(folder, 'utf8').filter(function(listsubfolders) {
+          return listsubfolders !== '.DS_Store'
+        });
         return ['./'].concat(subfolders);
       }
     }, {
@@ -44,7 +46,8 @@ module.exports = yeoman.Base.extend({
         'twig',
         'yml',
         'scss',
-        'md'
+        'md',
+        'js'
       ]
     }, {
       name: 'name',
@@ -61,7 +64,6 @@ module.exports = yeoman.Base.extend({
   },
 
   writing: function () {
-
     // console.log(this.props);
     var destPath = path.join(plBase, this.props.patternType, this.props.patternSubType, this.props.name);
 
@@ -104,7 +106,6 @@ module.exports = yeoman.Base.extend({
         this.props
       );
     }
-
   }
-
+  
 });
